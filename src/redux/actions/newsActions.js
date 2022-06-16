@@ -10,7 +10,7 @@ export const fetchNews = () => async dispatch => {
 
         dispatch(
             {
-                type: FETCH_NEWS, payload: data
+                type: FETCH_NEWS, payload: data.articles
             }
         )
     } catch (error) {
