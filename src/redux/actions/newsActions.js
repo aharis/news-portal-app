@@ -4,13 +4,13 @@ import { FETCH_NEWS } from "./types";
 
 const key = process.env.REACT_APP_API;
 
-export const fetchNews = () => async dispatch => {
+export const fetchNews = (page) => async dispatch => {
     try {
-        const { data } = await axios.get(`${BASE_URL}${key}`)
+        const { data } = await axios.get(`${BASE_URL}page=${page}&country=us&apiKey=${key}`)
 
         dispatch(
             {
-                type: FETCH_NEWS, payload: data.articles
+                type: FETCH_NEWS, payload: data
             }
         )
     } catch (error) {

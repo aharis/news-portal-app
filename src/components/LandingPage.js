@@ -4,17 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchNews } from '../redux/actions/newsActions';
 
 
-const Landing = () => {
+const Landing = ({ page }) => {
 
     const dispatch = useDispatch()
     const { news } = useSelector(state => state.news)
-    console.log(news)
 
     useEffect(() => {
 
-        dispatch(fetchNews())
+        dispatch(fetchNews(page))
 
-    }, [])
+    }, [dispatch, page])
 
     const displayNews = news?.map((item, index) => {
         return (<SingleItem key={index} data={item} />)

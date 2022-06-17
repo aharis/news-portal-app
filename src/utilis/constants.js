@@ -1,1 +1,1 @@
-export const BASE_URL = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
+export const BASE_URL = "https://newsapi.org/v2/top-headlines?";

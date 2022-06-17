@@ -12,7 +12,8 @@ export const newsReducer = (state = initialState, action) => {
         case FETCH_NEWS:
             return {
                 ...state,
-             news: action.payload
+                news: [...state.news, ...action.payload.articles],
+                totalResults: action.payload.totalResults
             };
             
         default:
