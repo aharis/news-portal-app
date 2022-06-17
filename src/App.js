@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import './App.css';
-import Landing from './components/LandingPage';
-import LoadMoreButton from './components/LoadMoreButton';
+import Home from './components/Home';
+import Header from './components/Header';
+import Details from './components/Details';
 import { Container } from '@material-ui/core';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import './App.css';
 
 const App = () => {
 
-  const [page, setPage] = useState(1);
 
   return (
     <Container className="App">
-      <h1>News Portal</h1>
-      <Landing page={page} />
-      <LoadMoreButton setPage={setPage} />
+      <Header />
+      <Router>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/articles/:id' component={Details} />
+      </Router>      
     </Container>
   );
 }
