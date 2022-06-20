@@ -57,24 +57,24 @@ const Details = ({ match }) => {
 
     return (
         <Container className={classes.container}>
-        <Card className={classes.card}>
-            <CardContent>
+            <Card className={classes.card}>
+                <CardContent>
 
-                <Typography variant='h5'>{details?.source?.name}</Typography>
-                <Typography variant='h6'>{details?.author}</Typography>
-                <Typography variant='h4'>{details?.title}</Typography>
-                <Typography className={classes.desc}>{details?.description}</Typography>
-                <CardMedia><img src={getImage(details)} alt="img" className={classes.img} /></CardMedia>
-                <Typography className={classes.date}>{showDate(details?.publishedAt)}</Typography>
-                <CardContent variant='body'>{details?.content}</CardContent>
+                    <Typography variant='h5'>{details?.source?.name}</Typography>
+                    <Typography variant='h6'>{details?.author}</Typography>
+                    <Typography variant='h4'>{details?.title}</Typography>
+                    <Typography className={classes.desc}>{details?.description}</Typography>
+                    <CardMedia><img src={getImage(details)} alt="img" className={classes.img} /></CardMedia>
+                    <Typography className={classes.date}>{showDate(details?.publishedAt)}</Typography>
+                    <CardContent variant='body'>{details?.content}</CardContent>
 
-            </CardContent>
-            <CardActions className={classes.button}>
-                <Button variant='outlined' onClick={handleButton}>Back to Home</Button>
-            </CardActions>
-        </Card>
+                </CardContent>
+                <CardActions className={classes.button}>
+                    <Button variant='outlined' onClick={handleButton}>Back to Home</Button>
+                </CardActions>
+            </Card>
 
-    </Container>
+        </Container>
     )
 }
 

@@ -17,7 +17,7 @@ export const newsReducer = (state = initialState, action) => {
                 ...state,
                 news: state.page === 1 ? action.payload.articles : [...state.news, ...action.payload.articles],
                 totalResults: action.payload.totalResults
-            };
+            };            
             case CLEAR_NEWS:
             return {
                 news: action.payload,

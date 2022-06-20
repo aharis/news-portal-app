@@ -16,7 +16,7 @@ const Header = () => {
                         News
                     </Typography>
 
-                    <Typography style={{ flexGrow: 1, textAlign: "center" }}>
+                    <Typography variant='h5' style={{ flexGrow: 1, textAlign: "center" }}>
                         News Portal
                     </Typography>
 

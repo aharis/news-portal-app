@@ -54,7 +54,7 @@ const SingleItem = ({ data, id }) => {
                     {data.description}
                 </Typography>
                 <CardMedia >
-                    <img src={getImage(data)} className={classes.img} alt="img"/>
+                    <img src={getImage(data)} className={classes.img} alt="img" />
                 </CardMedia>
             </CardContent>
             <Button
