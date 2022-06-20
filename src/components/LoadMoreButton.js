@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '@material-ui/core';
+import { setPage } from '../redux/actions/newsActions';
 
-const LoadMoreButton = ({ setPage }) => {
+const LoadMoreButton = () => {
 
-
-  const { news, totalResults } = useSelector(state => state.news);
+  const dispatch = useDispatch();
+  const { news, totalResults, page } = useSelector(state => state.news);
   const [isDisabled, setIsDisabled] = useState(false);
 
 
   const handleButton = () => {
-    setPage(prev => prev + 1);
+    dispatch(setPage(page + 1));
   }
 
   useEffect(() => {
@@ -24,8 +25,14 @@ const LoadMoreButton = ({ setPage }) => {
 
   return (
     <div>
-      <Button variant='contained' onClick={handleButton} disabled={isDisabled}>
+      <Button
+        variant='contained'
+        onClick={handleButton}
+        disabled={isDisabled}
+        style={{ margin: '15px' }}
+      >
         Load More
+
       </Button>
     </div>
   )

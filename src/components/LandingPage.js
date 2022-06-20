@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import SingleItem from './SingleItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchNews } from '../redux/actions/newsActions';
-import Grid from '@material-ui/core/Grid';
-import { Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
+import {Grid} from '@material-ui/core';
+
 
 const LandingPage = ({ page }) => {
 
@@ -17,7 +18,9 @@ const LandingPage = ({ page }) => {
     }, [dispatch, page])
 
     return (
-        <Container>
+        <Box
+            display='flex'
+            justifyContent="center">
             <Grid container spacing={2}>
                 {
                     news?.map((item, index) => (
@@ -28,7 +31,7 @@ const LandingPage = ({ page }) => {
                 }
 
             </Grid>
-        </Container>
+        </Box>
     )
 }
 

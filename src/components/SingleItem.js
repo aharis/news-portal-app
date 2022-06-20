@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container, Grid } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -10,16 +9,17 @@ import { useHistory } from 'react-router-dom';
 import { getImage } from '../utilis/helpers';
 
 
-const useStyles = makeStyles((theme) => ({
-   
+const useStyles = makeStyles(() => ({
+
     card: {
-        width: 280,
+        width: 300,
         height: 350,
+        marginRight: 0,
     },
     img: {
         width: 250,
         height: 200,
-        
+
     },
     title: {
         fontSize: 16,
@@ -44,27 +44,27 @@ const SingleItem = ({ data, id }) => {
     const history = useHistory();
 
     return (
-        <Container>
-        <Grid >
 
-            <Card className={classes.card}>
-                <CardContent>
-                    <Typography className={classes.title}>
-                        {data.title}
-                    </Typography>
-                    <Typography className={classes.description}>
-                        {data.description}
-                    </Typography>
-                    <CardMedia >
-                    <img src={getImage(data)} className={classes.img} />
-                    </CardMedia>
-                </CardContent>
-                <Button variant='outlined' onClick={() => history.push(`/articles/${id}`)}>
-                    READ FULL ARTICLE
-                </Button>
-            </Card>
-        </Grid>
-    </Container>
+        <Card className={classes.card}>
+            <CardContent>
+                <Typography className={classes.title}>
+                    {data.title}
+                </Typography>
+                <Typography className={classes.description}>
+                    {data.description}
+                </Typography>
+                <CardMedia >
+                    <img src={getImage(data)} className={classes.img} alt="img"/>
+                </CardMedia>
+            </CardContent>
+            <Button
+                variant='outlined'
+                onClick={() => history.push(`/articles/${id}`)}
+            >
+                READ FULL ARTICLE
+            </Button>
+        </Card>
+
 
     )
 }
